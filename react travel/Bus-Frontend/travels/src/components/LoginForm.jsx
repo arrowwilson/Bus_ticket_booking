@@ -14,7 +14,7 @@ const LoginForm =({onLogin}) =>{
 const handleSubmit =async(e)=>{
     e.preventDefault()
     try {
-        const response =await axios.post('http://localhost:8000/api/login/', form)
+        const response =await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/login/`, form)
         setMessage('Login Success')
 
         if(onLogin){

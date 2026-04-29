@@ -19,7 +19,7 @@ const BusSeats = ({ token }) => {
     useEffect(() => {
         const fetchBusDetails = async () => {
             try {
-                const response = await axios(`http://localhost:8000/api/buses/${busId}`)
+                const response = await axios(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/buses/${busId}`)
                 setBus(response.data)
                 setSeats(response.data.seats || [])
             } catch (error) {
@@ -51,7 +51,7 @@ const BusSeats = ({ token }) => {
       
         try {
           const res = await axios.post(
-            'http://localhost:8000/api/booking/',
+            `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/booking/`,
             { seat: seatId },
             {
               headers: {

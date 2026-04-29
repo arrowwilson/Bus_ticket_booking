@@ -11,7 +11,7 @@ useEffect(()=>{
             return
         }
         try {
-            const response = await axios.get(`http://localhost:8000/api/user/${userId}/bookings/`,
+            const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/user/${userId}/bookings/`,
                 {
                     headers:{
                         Authorization : `Token ${token}`

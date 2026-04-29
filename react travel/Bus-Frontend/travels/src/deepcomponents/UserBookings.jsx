@@ -16,7 +16,7 @@ const UserBookings = ({ token, userId }) => {
 
   if (!storedToken || !storedUserId) return;
 
-    fetch(`http://localhost:8000/api/user/${storedUserId}/bookings/`, {
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/user/${storedUserId}/bookings/`, {
       headers: {
         Authorization: `Token ${storedToken}`, //chance
       },
