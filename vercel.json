@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd \"react travel/Bus-Frontend/travels\" && npm run build",
+  "installCommand": "cd \"react travel/Bus-Frontend/travels\" && npm install",
+  "outputDirectory": "react travel/Bus-Frontend/travels/dist"
+}
